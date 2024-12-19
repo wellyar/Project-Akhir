@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mobile App Interface</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .iphone {
+            width: 375px;
+            height: 812px;
+            background-color: #fff;
+            border-radius: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .iphone::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header .icons {
+            display: flex;
+            align-items: center;
+        }
+        .header .icons i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .header .icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .search-bar {
+            margin: 60px 0;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .promo {
+            background-color: #197E54;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .promo img {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .promo-text {
+            font-size: 18px;
+        }
+        .promo-text h2 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .carousel-indicators div {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .carousel-indicators .active {
+            background-color: #2e8b57;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .grid-item img {
+            width: 60px;
+            height: auto;
+        }
+        .grid-item p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: #197E54;
+        }
+        .footer {
+            background-color: #197E54;
+            padding: 25px 20;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .footer i {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone">
+        <div class="container">
+            <div class="header">
+                <h1>Welcome<br/>User</h1>
+                <div class="icons">
+                    <i class="fas fa-bell"></i>
+                    <img alt="User profile picture" height="40" src="Screenshot 2024-12-19 114146.png" width="40"/>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input placeholder="Pencarian..." type="text"/>
+            </div>
+            <div class="promo">
+                <div class="promo-text">
+                    <p>Diskon Akhir Tahun</p>
+                    <h2>50%</h2>
+                    <p>Untuk Semua Pupuk</p>
+                </div>
+                <img alt="Pupuk products" height="80" src="Screenshot 2024-12-19 114146.png" width="80"/>
+            </div>
+            <div class="carousel-indicators">
+                <div class="active"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="grid">
+                <div class="grid-item" onclick="handleClick('Analisis Pupuk')">
+                    <img alt="Analisis Pupuk" height="60" src="Screenshot 2024-12-19 113654.png" width="60"/>
+                    <p>Analisis Pupuk</p>
+                </div>
+                <div class="grid-item" onclick="handleClick('Informasi Produk')">
+                    <img alt="Informasi Produk" height="60" src="Screenshot 2024-12-19 113713.png" width="60"/>
+                    <p>Informasi Produk</p>
+                </div>
+                <div class="grid-item" onclick="handleClick('Komoditas')">
+                    <img alt="Komoditas" height="60" src="Screenshot 2024-12-19 113726.png" width="60"/>
+                    <p>Komoditas</p>
+                </div>
+                <div class="grid-item" onclick="handleClick('Kalender Program')">
+                    <img alt="Kalender Program" height="60" src="Screenshot 2024-12-19 113737.png" width="60"/>
+                    <p>Kalender Program</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <i class="fas fa-home" onclick="handleClick('Home')"></i>
+            <i class="fas fa-calculator" onclick="handleClick('Calculator')"></i>
+            <i class="fas fa-user" onclick="handleClick('User')"></i>
+        </div>
+    </div>
+    <script>
+        function handleClick(buttonName) {
+            console.log(buttonName + ' button clicked');
+        }
+    </script>
+</body>
+</html>
